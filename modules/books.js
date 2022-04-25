@@ -12,7 +12,7 @@ export class BookEntry {
   }
 
   add() {
-    function creaateAndSet(title, author, idNum) {
+    const creaateAndSet = (title, author, idNum) => {
       const bookBlock = document.createElement("div");
       const bookInfo = document.createElement("div");
       const bookTitle = document.createElement("h4");
@@ -38,7 +38,7 @@ export class BookEntry {
       bookList.append(bookBlock);
 
       BookEntry.remove(removeButton);
-    }
+    };
     creaateAndSet(this.title, this.author, this.idNum);
   }
 

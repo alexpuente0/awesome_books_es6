@@ -13,6 +13,3 @@ export function changeSection() {
     document.getElementById("contact").style.display = "block";
   }
 }
-
-
-
