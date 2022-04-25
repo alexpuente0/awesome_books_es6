@@ -1,6 +1,4 @@
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
-const bookList = document.querySelector("#book-list");
+import {titleInput, authorInput, bookList} from './values.js'
 
 let booksArray = [];
 
@@ -19,6 +17,7 @@ export class BookEntry {
       const bookAuthor = document.createElement("h4");
       const bookIdNumber = document.createElement("h4");
       const removeButton = document.createElement("button");
+
       bookTitle.innerHTML = `'${title}'`;
       bookAuthor.innerHTML = `by ${author}`;
       bookIdNumber.innerHTML = idNum;
@@ -44,10 +43,8 @@ export class BookEntry {
 
   static remove(element) {
     function removeBook() {
-      booksArray = booksArray.filter(
-        (book) =>
-          +book.idNum !== +this.parentNode.children[0].children[2].innerHTML
-      );
+      booksArray = booksArray.filter((book) => +book.idNum 
+      !== +this.parentNode.children[0].children[2].innerHTML);
       this.parentNode.remove();
 
       booksArray.forEach((book, i) => {
@@ -83,10 +80,13 @@ export class BookEntry {
   }
 
   static loadBooks() {
-    JSON.parse(localStorage.getItem("bookdata")).forEach((book, i) => {
-      const newBook = new BookEntry(book.title, book.author, i);
-      newBook.add();
-      booksArray.push(newBook);
-    });
+    const library = JSON.parse(localStorage.getItem("bookdata"));
+    if (library != null) {
+      library.forEach((book, i) => {
+    const newBook = new BookEntry(book.title, book.author, i);
+    newBook.add();
+    booksArray.push(newBook);
+      });
+   }
   }
 }
