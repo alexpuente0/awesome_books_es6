@@ -11,9 +11,9 @@ addButton.addEventListener("click", BookEntry.addBooks);
 
 BookEntry.loadBooks();
 
-document.getElementById("slist").addEventListener("click", changeSection);
-document.getElementById("sadd").addEventListener("click", changeSection);
-document.getElementById("scontact").addEventListener("click", changeSection);
+document.getElementById("slist").addEventListener("click", (e) => changeSection(e));
+document.getElementById("sadd").addEventListener("click", (e) => changeSection(e));
+document.getElementById("scontact").addEventListener("click", (e) => changeSection(e));
 
 setInterval(() => {
   const aTime = DateTime.now();
