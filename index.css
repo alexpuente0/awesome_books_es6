@@ -1,7 +1,6 @@
 * {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
-  background-color: azure;
 }
 
 body {
@@ -81,22 +80,18 @@ body {
   overflow: auto;
 }
 
-.bookblock1 {
+.bookBlock {
   display: flex;
   justify-content: space-between;
   padding: 15px 45px;
   gap: 150px;
 }
 
-.bookblock2 {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 45px;
-  gap: 150px;
-  background-color: rgba(0, 0, 0, 0.185);
+.bookBlock:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.185);
 }
 
-.bookblock2 h4 {
+.bookblock h4 {
   background: none;
 }
 
