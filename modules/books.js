@@ -25,41 +25,31 @@ export class BookEntry {
       bookInfo.classList.add("bookinfo");
       bookIdNumber.classList.add("counter");
       removeButton.classList.add("btn", "rmbtn");
+      removeButton.setAttribute('id', idNum)
+      removeButton.addEventListener('click', (event) => {this.remove(event.target)})
 
-      if (idNum % 2 === 0) {
-        bookBlock.classList.add("bookblock2");
-      } else {
-        bookBlock.classList.add("bookblock1");
-      }
+      bookBlock.classList.add('bookBlock')
 
       bookInfo.append(bookTitle, bookAuthor, bookIdNumber);
       bookBlock.append(bookInfo, removeButton);
       bookList.append(bookBlock);
 
-      BookEntry.remove(removeButton);
+
     };
     creaateAndSet(this.title, this.author, this.idNum);
   }
 
-  static remove(element) {
-    function removeBook() {
-      booksArray = booksArray.filter((book) => +book.idNum 
-      !== +this.parentNode.children[0].children[2].innerHTML);
-      this.parentNode.remove();
-
-      booksArray.forEach((book, i) => {
-        bookList.children[i].children[0].children[2].innerHTML = i;
-        book.idNum = i;
-
-        if (i % 2 === 0) {
-          bookList.children[i].className = "bookblock2";
-        } else {
-          bookList.children[i].className = "bookblock1";
-        }
+  remove(element) {
+    let removeBook = () => {
+      booksArray = booksArray.filter((book) => {
+      return book.idNum !== +element.id
       });
+      element.parentNode.remove();
+
       localStorage.setItem("bookdata", JSON.stringify(booksArray));
+      console.log(booksArray)
     }
-    element.addEventListener("click", removeBook);
+    removeBook();
   }
 
   static addBooks() {
