@@ -161,3 +161,72 @@ input {
 #contact {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  #nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+
+  #tab-group {
+    margin: 0;
+  }
+
+  #datetime {
+    display: none;
+  }
+
+  #list {
+    margin-bottom: 20px;
+  }
+
+  #book-list {
+    width: 95%;
+  }
+
+  .bookBlock {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .bookinfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 12px;
+  }
+
+  .bookinfo p {
+    margin: 0;
+  }
+
+  .bookinfo h4 {
+    margin: 0;
+  }
+
+  .btn {
+    margin: 0;
+  }
+
+  .counter {
+    display: none;
+  }
+
+  #add-new-book,
+  #contact {
+    display: block;
+  }
+
+  #list,
+  #contact {
+    display: none;
+  }
+  
+  footer {
+    margin-top: 40px;
+    padding: 10px 15px;
+}
+}
+  
+
